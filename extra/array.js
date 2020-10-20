@@ -92,6 +92,76 @@ const found = array9.find(element => element > 10);
 console.log(found);
 
 
+//11th Array.entries()
+const array11 = ['x', 'y', 'z'];
+
+const iterator1 = array11.entries();
+
+console.log(iterator1.next().value);
+console.log(iterator1.next().value);
+
+
+//12th Array.flat()
+
+const arr1 = [0, 1, 2, [3, 4]];
+
+console.log(arr1.flat());
+
+const arr2 = [0, 1, 2, [[[3, 4]]]];
+
+console.log(arr2.flat(2));
+
+
+//13th  Array.includes()
+
+const array13 = [1, 2, 3];
+
+console.log(array13.includes(2));
+
+
+const pets = ['cat', 'dog', 'bat'];
+
+console.log(pets.includes('cat'));
+
+
+console.log(pets.includes('at'));
+
+//14th Array.reduce()
+
+
+const array15 = [1, 2, 3, 4];
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+console.log(array15.reduce(reducer));
+
+
+console.log(array15.reduce(reducer, 5));
+
+//15th Array.some()
+
+const array16 = [1, 2, 3, 4, 5];
+
+const even = (element) => element % 2 === 0;
+
+console.log(array16.some(even));
+
+//16th array.every()
+
+const isBelowThreshold = (currentValue) => currentValue < 40;
+
+const array14 = [1, 30, 39, 29, 10, 13];
+
+console.log(array14.every(isBelowThreshold));
+
+//17th ayyay.foreach()
+
+
+const array17 = ['a', 'b', 'c'];
+
+array17.forEach(element => console.log(element));
+
+
+
    
 
    
