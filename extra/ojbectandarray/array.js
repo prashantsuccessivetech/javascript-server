@@ -158,8 +158,3 @@ console.log(array14.every(isBelowThreshold));
 
 const array17 = ['a', 'b', 'c'];
 array17.forEach(element => console.log(element));
-
-
-   
-
-   

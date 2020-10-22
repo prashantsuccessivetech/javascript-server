@@ -132,5 +132,3 @@ const object6 = {
 
 
 
-
-
