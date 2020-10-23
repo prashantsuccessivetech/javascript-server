@@ -1,26 +1,16 @@
-k = 0;
-let s=" ";
-let flag = 1;
-// rows=4;
-rows = parseInt(process.argv[2]);
-// console.log(rows);
-for(i=1;i<=2*rows-1;i++){
-if(i<rows-k)
-process.stdout.write(" ");
-else{
-if(flag)
-process.stdout.write("*");
-else
-process.stdout.write(" ");
-flag=1-flag;
-}
-if(i==rows+k)
+let x;
+export default function equilateral (x)
 {
-k++;
-console.log("\n");
-if(i==2*rows-1)
-break;
-i=0;
-flag = 1;
+let a= " "
+console.log("print a equilateral triangle with rows "+x);
+for(let i=1;i<=x;i++){
+a="";
+for(let j=i;j<=x;j++){
+a+=" ";
+}
+for (let z=i;z>0;z--){
+a+="* ";
+}
+console.log(a);
 }
 }
