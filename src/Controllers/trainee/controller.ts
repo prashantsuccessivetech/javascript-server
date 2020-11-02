@@ -35,7 +35,7 @@ class traineeController {
             console.log("Inside post method of Trainee Controller");
 
             res.send({
-                message: "trainee fetched successfully",
+                message: "trainee create successfully",
                 data: [
                     {
                         name: "Trainee",
@@ -55,7 +55,7 @@ class traineeController {
             console.log("Inside update method of Trainee Controller");
 
             res.send({
-                message: "trainee fetched successfully",
+                message: "trainee update successfully",
                 data: [
                     {
                         name: "Trainee",
@@ -74,7 +74,7 @@ class traineeController {
             console.log("Inside delete method of Trainee Controller");
 
             res.send({
-                message: "trainee fetched successfully",
+                message: "trainee delete successfully",
                 data: [
                     {
                         name: "Trainee",
