@@ -35,6 +35,7 @@ class traineeController {
 
             res.send({
                 message: "Trainee created  successfully",
+                message: "trainee create successfully",
                 data: [
                     {
                         name: req.body.name,
@@ -55,6 +56,7 @@ class traineeController {
 
             res.send({
                 message: "Trainee updated successfully",
+                message: "trainee update successfully",
                 data: [
                     {
                         name: "Suresh",
@@ -74,6 +76,7 @@ class traineeController {
 
             res.send({
                 message: "Trainee deleted successfully",
+                message: "trainee delete successfully",
                 data: [
                     {
                         name: "Suresh",
