@@ -1,6 +1,7 @@
 import * as express from "express";
 import * as bodyParser from "body-parser";
-import { notFoundHandler, errorHandler } from './libs/routes';
+import { notFoundRoute, errorHandler } from './libs/routes';
+import router from './router';
 
 class Server{
     app
@@ -18,7 +19,8 @@ class Server{
             res.send("I am OK");
         });
 
-        this.app.use(notFoundHandler);
+        this.app.use('/api',router);
+        this.app.use(notFoundRoute);
         this.app.use(errorHandler);
         this.app.use((req, res, next) => {
             next({
@@ -43,7 +45,7 @@ class Server{
         return this;
     }
     public initBodyParser(){
-        this.app.use(bodyParser.json( {type : 'application/**json'}))
+        this.app.use(bodyParser.json());
     }
     run(){
         const {app, config:{PORT}}=this;
