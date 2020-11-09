@@ -1,3 +1,4 @@
+import { TraineeControllerResponse } from '../../libs/routes/Constants';
 class traineeController {
     static instance: traineeController
 
@@ -11,13 +12,17 @@ class traineeController {
 
     get(req, res, next) {
         try {
+
             console.log('TraineeControllerResponse.insideGet');
 
+            console.log(TraineeControllerResponse.insideGet);
+
+
             res.send({
-                message: "Trainee displayed successfully",
+                message: TraineeControllerResponse.getMessage,
                 data: [
                     {
-                        name: "Suresh",
+                        name: "prashant",
                         address: "Noida"
                     }
                 ]
@@ -31,10 +36,16 @@ class traineeController {
     create(req, res, next) {
         try {
             
+
             console.log('TraineeControllerResponse.cretae');
 
+            console.log(TraineeControllerResponse.create);
+
+
             res.send({
+
                 message: "Trainee created  successfully",
+
                 data: [
                     {
                         name: req.body.name,
@@ -51,13 +62,20 @@ class traineeController {
     update(req, res, next) {
         try {
             
+
             console.log('TraineeControllerResponse.update');
 
+            console.log(TraineeControllerResponse.update)
+
+
             res.send({
+
                 message: "Trainee updated successfully",
+
+
                 data: [
                     {
-                        name: "Suresh",
+                        name: "prashant",
                         address: "Noida"
                     }
                 ]
@@ -70,13 +88,19 @@ class traineeController {
     delete(req, res, next) {
         try {
             
+
             console.log('TraineeControllerResponse.delete');
 
+            console.log(TraineeControllerResponse.delete);
+
+
             res.send({
+
                 message: "Trainee deleted successfully",
+
                 data: [
                     {
-                        name: "Suresh",
+                        name: "prashant",
                         address: "Noida"
                     }
                 ]
