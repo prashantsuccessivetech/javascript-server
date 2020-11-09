@@ -1,3 +1,4 @@
+import { TraineeControllerResponse } from '../../libs/routes/Constants';
 class traineeController {
     static instance: traineeController
 
@@ -11,14 +12,13 @@ class traineeController {
 
     get(req, res, next) {
         try {
-            var console: Console
-            console.log("Inside get method of Trainee Controller");
+            console.log(TraineeControllerResponse.insideGet);
 
             res.send({
-                message: "trainee fetched successfully",
+                message: TraineeControllerResponse.getMessage,
                 data: [
                     {
-                        name: "Trainee",
+                        name: "prashant",
                         address: "Noida"
                     }
                 ]
@@ -31,15 +31,17 @@ class traineeController {
 
     create(req, res, next) {
         try {
-            var console: Console
-            console.log("Inside post method of Trainee Controller");
+            
+            console.log(TraineeControllerResponse.create);
 
             res.send({
-                message: "trainee create successfully",
+
+                message: "Trainee created  successfully",
+
                 data: [
                     {
-                        name: "Trainee",
-                        address: "Noida"
+                        name: req.body.name,
+                        address: req.body.add
                     }
                 ]
             });
@@ -51,14 +53,17 @@ class traineeController {
 
     update(req, res, next) {
         try {
-            var console: Console
-            console.log("Inside update method of Trainee Controller");
+            
+            console.log(TraineeControllerResponse.update)
 
             res.send({
-                message: "trainee update successfully",
+
+                message: "Trainee updated successfully",
+
+
                 data: [
                     {
-                        name: "Trainee",
+                        name: "prashant",
                         address: "Noida"
                     }
                 ]
@@ -70,14 +75,16 @@ class traineeController {
     }
     delete(req, res, next) {
         try {
-            var console: Console
-            console.log("Inside delete method of Trainee Controller");
+            
+            console.log(TraineeControllerResponse.delete);
 
             res.send({
-                message: "trainee delete successfully",
+
+                message: "Trainee deleted successfully",
+
                 data: [
                     {
-                        name: "Trainee",
+                        name: "prashant",
                         address: "Noida"
                     }
                 ]

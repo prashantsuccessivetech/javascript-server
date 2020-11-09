@@ -1,6 +1,8 @@
 import * as express from "express";
 import * as bodyParser from "body-parser";
-import { notFoundHandler, errorHandler } from './libs/routes';
+import { notFoundRoute, errorHandler } from './libs/routes';
+import router from './router';
+import Database from './libs/Database';
 
 class Server{
     app
@@ -18,7 +20,8 @@ class Server{
             res.send("I am OK");
         });
 
-        this.app.use(notFoundHandler);
+        this.app.use('/api',router);
+        this.app.use(notFoundRoute);
         this.app.use(errorHandler);
         this.app.use((req, res, next) => {
             next({
@@ -43,18 +46,26 @@ class Server{
         return this;
     }
     public initBodyParser(){
-        this.app.use(bodyParser.json( {type : 'application/**json'}))
+        this.app.use(bodyParser.json());
     }
-    run(){
-        const {app, config:{PORT}}=this;
-        app.listen(PORT,(err)=>{
-            if (err) {
-                console.log( err );
-                
-            }
-            console.log(`App is running on port ${PORT}`);
-
+    run() {
+        const { app, config: { PORT } } = this;
+        Database.open('mongodb://localhost:27017/express-training')
+        .then((res) => {
+        console.log('Succesfully connected to Mongo');
+        app.listen( PORT, (err) => {
+        if (err) {
+        console.log(err);
+        }
+        else {
+        console.log(`App is running on port ${process.env.PORT}`);
+        Database.disconnect();
+        }
+        });
         })
-    }
+        .catch(err => console.log(err));
+        return this;
+        }
+        
 }
 export default Server;
