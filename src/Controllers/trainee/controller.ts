@@ -38,6 +38,7 @@ class traineeController {
             
 
             console.log('TraineeControllerResponse.cretae');
+            console.log('TraineeControllerResponse.create');
 
             console.log(TraineeControllerResponse.create);
 
@@ -75,7 +76,13 @@ class traineeController {
 
                 data: [
                     {
+                        name: "Prashant",
+
+
+                data: [
+                    {
                         name: "prashant",
+
                         address: "Noida"
                     }
                 ]
@@ -91,6 +98,8 @@ class traineeController {
 
             console.log('TraineeControllerResponse.delete');
 
+            console.log('traineeControllerResponse.delete');
+
             console.log(TraineeControllerResponse.delete);
 
 
@@ -100,7 +109,11 @@ class traineeController {
 
                 data: [
                     {
+
+                        name: "Prashant",
+
                         name: "prashant",
+
                         address: "Noida"
                     }
                 ]
