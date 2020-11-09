@@ -10,6 +10,7 @@ const config = {
             default: 0,
             number: true,
             in: ['query'],
+            errorMessage: 'Skip is invalid'
 
             errorMessage: TraineeValidationResponse.getskip,
 
@@ -21,6 +22,7 @@ const config = {
             default: 10,
             number: true,
             in: ['query'],
+            errorMessage: 'Limit is invalid'
             errorMessage: TraineeValidationResponse.getlimit,
         }
     },
@@ -38,6 +40,7 @@ const config = {
             required: true,
             regex: '',
             in: ['body'],
+            errorMessage: 'Name is required'
 
             errorMessage: TraineeValidationResponse.created,
 
@@ -48,6 +51,7 @@ const config = {
     Delete: {
         id: {
             required: true,
+            errorMessage: 'Id is required',
 
             errorMessage: TraineeValidationResponse.deleted,
             errorMessage: TraineeValidationResponse.deleteid,
