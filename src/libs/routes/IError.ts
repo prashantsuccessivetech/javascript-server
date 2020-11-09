@@ -1,5 +1,5 @@
-interface IError{
-    error: string;
-    code: number;
-    message: string;
+export default interface IError {
+  error: string;
+  code: number;
+  message: string;
 }
