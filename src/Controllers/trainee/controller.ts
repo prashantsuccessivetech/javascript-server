@@ -37,6 +37,7 @@ class traineeController {
         try {
             
 
+            console.log('TraineeControllerResponse.cretae');
             console.log('TraineeControllerResponse.create');
 
             console.log(TraineeControllerResponse.create);
@@ -94,6 +95,8 @@ class traineeController {
     delete(req, res, next) {
         try {
             
+
+            console.log('TraineeControllerResponse.delete');
 
             console.log('traineeControllerResponse.delete');
 

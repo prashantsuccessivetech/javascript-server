@@ -1,6 +1,5 @@
 
 import { TraineeValidationResponse } from "../../libs/routes/Constants";
-
 import { TraineeControllerResponse, TraineeValidationResponse } from '../../libs/routes/Constants';
 
 const config = {
@@ -12,6 +11,7 @@ const config = {
             in: ['query'],
             errorMessage: 'Skip is invalid'
 
+            errorMessage: TraineeValidationResponse.getskip,   
             errorMessage: TraineeValidationResponse.getskip,
 
             errorMessage: TraineeValidationResponse.getSkip,
@@ -40,6 +40,9 @@ const config = {
             required: true,
             regex: '',
             in: ['body'],
+
+            errorMessage: TraineeValidationResponse.created,
+
             errorMessage: 'Name is required'
 
             errorMessage: TraineeValidationResponse.created,
