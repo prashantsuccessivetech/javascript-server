@@ -12,7 +12,11 @@ class traineeController {
 
     get(req, res, next) {
         try {
+
+            console.log('TraineeControllerResponse.insideGet');
+
             console.log(TraineeControllerResponse.insideGet);
+
 
             res.send({
                 message: TraineeControllerResponse.getMessage,
@@ -32,7 +36,11 @@ class traineeController {
     create(req, res, next) {
         try {
             
+
+            console.log('TraineeControllerResponse.create');
+
             console.log(TraineeControllerResponse.create);
+
 
             res.send({
 
@@ -54,7 +62,11 @@ class traineeController {
     update(req, res, next) {
         try {
             
+
+            console.log('TraineeControllerResponse.update');
+
             console.log(TraineeControllerResponse.update)
+
 
             res.send({
 
@@ -63,7 +75,13 @@ class traineeController {
 
                 data: [
                     {
+                        name: "Prashant",
+
+
+                data: [
+                    {
                         name: "prashant",
+
                         address: "Noida"
                     }
                 ]
@@ -76,7 +94,11 @@ class traineeController {
     delete(req, res, next) {
         try {
             
+
+            console.log('traineeControllerResponse.delete');
+
             console.log(TraineeControllerResponse.delete);
+
 
             res.send({
 
@@ -84,7 +106,11 @@ class traineeController {
 
                 data: [
                     {
+
+                        name: "Prashant",
+
                         name: "prashant",
+
                         address: "Noida"
                     }
                 ]
