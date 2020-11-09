@@ -1,3 +1,4 @@
+import { TraineeControllerResponse } from '../../libs/routes/Constants';
 class traineeController {
     static instance: traineeController
 
@@ -11,10 +12,10 @@ class traineeController {
 
     get(req, res, next) {
         try {
-            console.log("Inside get method of Trainee Controller");
+            console.log(TraineeControllerResponse.insideGet);
 
             res.send({
-                message: "Trainee displayed successfully",
+                message: TraineeControllerResponse.getMessage,
                 data: [
                     {
                         name: "Suresh",
@@ -31,7 +32,7 @@ class traineeController {
     create(req, res, next) {
         try {
             
-            console.log("Inside post method of Trainee Controller");
+            console.log(TraineeControllerResponse.create);
 
             res.send({
                 message: "Trainee created  successfully",
@@ -51,7 +52,7 @@ class traineeController {
     update(req, res, next) {
         try {
             
-            console.log("Inside update method of Trainee Controller");
+            console.log(TraineeControllerResponse.update)
 
             res.send({
                 message: "Trainee updated successfully",
@@ -70,7 +71,7 @@ class traineeController {
     delete(req, res, next) {
         try {
             
-            console.log("Inside delete method of Trainee Controller");
+            console.log(TraineeControllerResponse.delete);
 
             res.send({
                 message: "Trainee deleted successfully",
