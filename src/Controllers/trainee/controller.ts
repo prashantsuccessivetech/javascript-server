@@ -37,7 +37,6 @@ class traineeController {
             res.send({
 
                 message: "Trainee created  successfully",
-                message: "trainee create successfully",
 
                 data: [
                     {
@@ -61,7 +60,6 @@ class traineeController {
 
                 message: "Trainee updated successfully",
 
-                message: "trainee update successfully",
 
                 data: [
                     {
@@ -83,8 +81,6 @@ class traineeController {
             res.send({
 
                 message: "Trainee deleted successfully",
-
-                message: "trainee delete successfully",
 
                 data: [
                     {
