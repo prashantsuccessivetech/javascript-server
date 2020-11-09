@@ -13,7 +13,7 @@ const config = {
             default: 10,
             number: true,
             in: ['query'],
-            errorMessage: TraineeValidationResponse.getlimt,
+            errorMessage: TraineeValidationResponse.getlimit,
         }
     },
     create: {
