@@ -11,9 +11,9 @@ Delete: [],
 
 export const traineeControllerResponse = {
 insideGet:'Inside get method of Trainee Controller',
-Getmessage:'trainee displayed successfuly',
-Getlimit:'trainee get limit method of trainee controller',
-create :'Inside create method of trainee Controller',
+Getmessage:'Trainee displayed successfuly',
+Getlimit:'Trainee get limit method of Trainee controller',
+create :'Inside create method of Trainee Controller',
 update :'Inside update method of Trainee Controller',
 delete : 'Inside delete method of Trainee Controller',
 
