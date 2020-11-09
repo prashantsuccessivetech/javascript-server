@@ -13,8 +13,8 @@ export const traineeControllerResponse = {
     insideGet: 'Inside get method of Trainee Controller',
     GetMessage:'Trainee displayed successfully',
     Getlimit:'trainee get limit method of trainee controller',
-    create :'Inside post method of trainee Controller',
-    update :'inside post method of Trainee Controller',
+    create :'Inside create method of trainee Controller',
+    update :'inside update method of Trainee Controller',
     delete :'Inside delete method of Trainee Controller',
     }
     export const TraineeValidationResponse = {
