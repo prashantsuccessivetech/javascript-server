@@ -18,7 +18,7 @@ class traineeController {
                 message: TraineeControllerResponse.getMessage,
                 data: [
                     {
-                        name: "Suresh",
+                        name: "prashant",
                         address: "Noida"
                     }
                 ]
@@ -63,7 +63,7 @@ class traineeController {
 
                 data: [
                     {
-                        name: "Suresh",
+                        name: "prashant",
                         address: "Noida"
                     }
                 ]
@@ -84,7 +84,7 @@ class traineeController {
 
                 data: [
                     {
-                        name: "Suresh",
+                        name: "prashant",
                         address: "Noida"
                     }
                 ]

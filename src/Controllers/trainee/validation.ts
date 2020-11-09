@@ -13,7 +13,7 @@ const config = {
             default: 10,
             number: true,
             in: ['query'],
-            errorMessage: 'Limit is invalid'
+            errorMessage: TraineeValidationResponse.getlimit,
         }
     },
     create: {
