@@ -121,7 +121,7 @@ class UserController {
         }
     }
 
-    me( req: IRequest, res: Response, next: NextFunction ) {
+    userDeatail( req: IRequest, res: Response, next: NextFunction ) {
         const data = req.userData;
        res.json( {
             data
