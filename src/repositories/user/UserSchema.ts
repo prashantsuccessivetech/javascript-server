@@ -1,16 +1,17 @@
-import * as mongoose from 'mongoose';
+import versionableSchema from '../versionable/VersionableSchema';
 
-class UserSchema extends mongoose.Schema {
+class UserSchema extends versionableSchema {
 
-    constructor(collections: any) {
+    constructor(collection) {
         const baseSchema = Object.assign({
-            id: String,
+            _id: String,
             name: String,
+            email: String,
             role: String,
-            password: String,
+            password: String
         });
-        super(baseSchema, collections);
+        super(baseSchema, collection);
     }
-
 }
+
 export default UserSchema;

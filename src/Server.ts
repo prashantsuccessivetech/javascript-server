@@ -5,22 +5,24 @@ import router from './router';
 import Database from './libs/Database';
 
 class Server{
-    app
+    private app
     constructor(private config){
-        this.app=express()
+        this.app = express();
     }
     bootstrap(){
-        this.setupRouts()
+        this.initBodyParser();
+        this.setupRouts();
         return this;
     }
     public setupRouts(){
-        const { app }=this;
-        app.use('/health-check',(req, res)=>{
+        // const { app }= this;
+        this.app.use('/api', router)
+
+        this.app.use('/health-check',(req, res)=>{
             console.log("inside Second middleware");
             res.send("I am OK");
         });
 
-        this.app.use('/api',router);
         this.app.use(notFoundRoute);
         this.app.use(errorHandler);
         this.app.use((req, res, next) => {
@@ -59,7 +61,6 @@ class Server{
         }
         else {
         console.log(`App is running on port ${process.env.PORT}`);
-        Database.disconnect();
         }
         });
         })

@@ -11,4 +11,6 @@ traineeRoutes.route('/')
         .put( authMiddleWare('trainee','all'),validationHandler( config.update ) , TraineeController.update )
         .delete(authMiddleWare('trainee','Delete'), validationHandler( config.Delete ) , TraineeController.delete );
 
+traineeRoutes.route('/test')
+        .get(TraineeController.get )
 export default traineeRoutes;

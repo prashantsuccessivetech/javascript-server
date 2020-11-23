@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+import {default as seed} from './SeedData';
 const mongoose = require("mongoose");
 class database {
     static open(mongoURL) {
@@ -11,6 +12,7 @@ class database {
                     reject(err);
                     return;
                 }
+                seed();
                 resolve(null);
             });
         });
