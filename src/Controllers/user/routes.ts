@@ -4,16 +4,17 @@ import authMiddleWare from '../../libs/routes/authMiddleWare';
 import { permissions} from '../../libs/routes/Constants';
 import validationHandler from '../../libs/routes/validationhandller';
 import config from './validation';
-import { Router } from 'express';
+const UserRouter = express.Router();
 
-const UserRouter = Router();
 UserRouter.route('/')
-.get( UserController.get)
-.post( UserController.create)
-.put( UserController.update)
-.delete( UserController.delete);
-UserRouter.route('/userDetail')
-.get(authMiddleWare ( permissions.getUsers, 'all' ), UserController.userDeatail);
+// .get( UserController.get)
+.post(authMiddleWare ( permissions.getUsers, 'read' ), UserController.create )
+.put(authMiddleWare ( permissions.getUsers, 'read' ), UserController.update )
+
+UserRouter.route('/:id').delete( authMiddleWare ( permissions.getUsers, 'read' ), UserController.remove );
+
+UserRouter.route('/userDeatail')
+.get(authMiddleWare ( permissions.getUsers, 'all' ), UserController.userDetail);
 
 UserRouter.route('/login')
 .post( validationHandler ( config.login ) , UserController.login );

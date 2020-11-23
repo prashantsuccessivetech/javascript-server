@@ -1,3 +1,4 @@
+import { userInfo } from 'os';
 import {IPermissions} from './Interfaces';
 export const permissions:IPermissions =
 {
