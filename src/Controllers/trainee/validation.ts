@@ -1,4 +1,6 @@
-import { TraineeControllerResponse, TraineeValidationResponse } from '../../libs/routes/Constants';
+
+import { TraineeValidationResponse } from '../../libs/routes/Constants';
+
 const config = {
     get: {
         skip: {
@@ -6,14 +8,15 @@ const config = {
             default: 0,
             number: true,
             in: ['query'],
-            errorMessage: TraineeValidationResponse.getSkip,
+            errorMessage: 'Skip is invalid'
+
         },
         limit: {
             required: false,
             default: 10,
             number: true,
             in: ['query'],
-            errorMessage: TraineeValidationResponse.getlimit,
+            errorMessage: 'Limit is invalid'
         }
     },
     create: {
@@ -30,13 +33,15 @@ const config = {
             required: true,
             regex: '',
             in: ['body'],
-            errorMessage: TraineeValidationResponse.createid,
+
+            errorMessage: TraineeValidationResponse.created,
         }
     },
     Delete: {
         id: {
             required: true,
-            errorMessage: TraineeValidationResponse.deleteid,
+            errorMessage: 'Id is required',
+
             in: ['params']
         }
     },
