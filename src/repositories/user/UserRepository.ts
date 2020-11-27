@@ -6,7 +6,7 @@ import * as bcrypt from 'bcrypt';
 import VersionableRepository from '../versionable/VersionableRepository';
 
 export default class UserRepository extends VersionableRepository<IUserModel, mongoose.Model<IUserModel>> {
-    create(arg0: { name: string; role: string; email: string; password: string; }, undefined: undefined) {
+    create(arg: { name: string; role: string; email: string; password: string; }) {
         throw new Error('Method not implemented.');
     }
 
