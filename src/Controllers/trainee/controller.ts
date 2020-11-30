@@ -1,128 +1,86 @@
-import { TraineeControllerResponse } from '../../libs/routes/Constants';
-class traineeController {
-    static instance: traineeController
+import { Request, Response, NextFunction } from 'express';
+import * as bcrypt from 'bcrypt';
+import UserRepositories from '../../repositories/user/UserRepository';
 
+class TraineeController {
+    private userRepository;
+    constructor() {
+        this.userRepository = new UserRepositories();
+    }
+    static instance: TraineeController;
     static getInstance() {
-        if (traineeController.instance) {
-            return traineeController.instance
+        if (TraineeController.instance) {
+            return TraineeController.instance;
         }
-        traineeController.instance = new traineeController();
-        return traineeController.instance;
+        TraineeController.instance = new TraineeController();
+        return TraineeController.instance;
     }
-
-    get(req, res, next) {
+    public get =  (req: Request, res: Response, next: NextFunction ) => {
         try {
-
-            console.log('TraineeControllerResponse.insideGet');
-
-            console.log(TraineeControllerResponse.insideGet);
-
-
-            res.send({
-                message: TraineeControllerResponse.getMessage,
-                data: [
-                    {
-                        name: "prashant",
-                        address: "Noida"
-                    }
-                ]
+            const extractedData =  this.userRepository.getAll(req.body, {}, {});
+            res.status(200).send({
+                message: 'trainee fetched successfully',
+                data: [extractedData],
+                status: 'success',
             });
-        }
-        catch (err) {
-            console.log("Inside err", err);
+        } catch (err) {
+            console.log('error is ', err);
         }
     }
-
-    create(req, res, next) {
+    public create =  (req: Request, res: Response, next: NextFunction ) => {
         try {
-            
-
-            console.log('TraineeControllerResponse.cretae');
-            console.log('TraineeControllerResponse.create');
-
-            console.log(TraineeControllerResponse.create);
-
-
-            res.send({
-
-                message: "Trainee created  successfully",
-
-                data: [
-                    {
-                        name: req.body.name,
-                        address: req.body.add
-                    }
-                ]
+            this.userRepository.create(req.body);
+            res.status(200).send({
+                message: 'trainee created successfully',
+                data: [req.body],
+                status: 'success',
             });
-        }
-        catch (err) {
-            console.log("Inside err", err);
+        } catch (err) {
+            console.log('error is ', err);
         }
     }
-
-    update(req, res, next) {
+    public update = (req: Request, res: Response, next: NextFunction ) => {
         try {
-            
-
-            console.log('TraineeControllerResponse.update');
-
-            console.log(TraineeControllerResponse.update)
-
-
-            res.send({
-
-                message: "Trainee updated successfully",
-
-
-                data: [
-                    {
-                        name: "Prashant",
-
-
-                data: [
-                    {
-                        name: "prashant",
-
-                        address: "Noida"
-                    }
-                ]
+            const isIdValid =  this.userRepository.update(req.body);
+            if (!isIdValid) {
+                return next({
+                    message: 'Id is invalid',
+                    error: 'Id not found',
+                    status: 400
+                });
+            }
+            res.status(200).send({
+                message: 'trainee updated successfully',
+                data: [req.body]
             });
-        }
-        catch (err) {
-            console.log("Inside err", err);
+        } catch (err) {
+            console.log('error is ', err);
         }
     }
-    delete(req, res, next) {
+    public delete = (req: Request, res: Response, next: NextFunction ) => {
         try {
-            
-
-            console.log('TraineeControllerResponse.delete');
-
-            console.log('traineeControllerResponse.delete');
-
-            console.log(TraineeControllerResponse.delete);
-
-
-            res.send({
-
-                message: "Trainee deleted successfully",
-
+            const id = req.params.id;
+            const isIdValid = this.userRepository.delete(id);
+            if (!isIdValid) {
+                return next({
+                    message: 'Id is invalid',
+                    error: 'Id not found',
+                    status: 400
+                });
+            }
+            res.status(200).send({
+                message: 'trainee deleted successfully',
                 data: [
                     {
-
-                        name: "Prashant",
-
-                        name: "prashant",
-
-                        address: "Noida"
+                        Id: id
                     }
-                ]
+                ],
+                status: 'success',
             });
-        }
-        catch (err) {
-            console.log("Inside err", err);
+        } catch (err) {
+            console.log('error is ', err);
         }
     }
 }
 
-export default traineeController.getInstance()
+export default TraineeController.getInstance();

@@ -1,27 +1,26 @@
+import { userModel } from '../repositories/user/UserModel';
 import UserRepository from '../repositories/user/UserRepository';
+import * as bcrypt from 'bcrypt';
+import { config } from '../config';
 
 const userRepository: UserRepository = new UserRepository();
+
 export default () => {
-    userRepository.count()
-    .then((res) => {
-        if( res === 0) {
-            console.log('Data sending in progress');
-            
-            userRepository.create({
-                name: 'Head Trainer',
-                role: 'head-trainer',
-                email: 'head.trainee@succesive.tech',
-                password: 'HelloWorld456'
-            },undefined);
-            userRepository.create({
-                name: 'Trainee',
-                role: 'trainee',
-                email: 'trainee@successive.tech',
-                password: 'HelloWorld123'
-            },undefined);
-        }
-    })
-    .catch((err) => console.log(err))
-}
-
-
+    console.log(config.PASSWORD);
+    userRepository.countData()
+        .then((res) => {
+            if (res === 0) {
+                console.log('Inserting Data...');
+                userRepository.userCreate({
+                    name: 'Head-Trainer',
+                    email: 'headtrainer@successive.tech',
+                    role: 'head.trainer',
+                    password: config.PASSWORD
+                });
+            }
+            else {
+                console.log(res);
+            }
+        })
+        .catch((err) => console.log(err));
+};

@@ -1,6 +1,5 @@
 
-import { TraineeValidationResponse } from "../../libs/routes/Constants";
-import { TraineeControllerResponse, TraineeValidationResponse } from '../../libs/routes/Constants';
+import { TraineeValidationResponse } from '../../libs/routes/Constants';
 
 const config = {
     get: {
@@ -11,11 +10,6 @@ const config = {
             in: ['query'],
             errorMessage: 'Skip is invalid'
 
-            errorMessage: TraineeValidationResponse.getskip,   
-            errorMessage: TraineeValidationResponse.getskip,
-
-            errorMessage: TraineeValidationResponse.getSkip,
-
         },
         limit: {
             required: false,
@@ -23,7 +17,6 @@ const config = {
             number: true,
             in: ['query'],
             errorMessage: 'Limit is invalid'
-            errorMessage: TraineeValidationResponse.getlimit,
         }
     },
     create: {
@@ -42,22 +35,12 @@ const config = {
             in: ['body'],
 
             errorMessage: TraineeValidationResponse.created,
-
-            errorMessage: 'Name is required'
-
-            errorMessage: TraineeValidationResponse.created,
-
-            errorMessage: TraineeValidationResponse.createid,
-
         }
     },
     Delete: {
         id: {
             required: true,
             errorMessage: 'Id is required',
-
-            errorMessage: TraineeValidationResponse.deleted,
-            errorMessage: TraineeValidationResponse.deleteid,
 
             in: ['params']
         }
