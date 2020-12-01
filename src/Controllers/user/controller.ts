@@ -8,6 +8,9 @@ import { userModel } from '../../repositories/user/UserModel';
 import IRequest from '../../IRequest';
 
 class UserController {
+    remove(arg0: string, arg1: (req: any, res: any, next: any) => void, arg2: (req: any, res: any, next: any) => any, remove: any) {
+        throw new Error('Method not implemented.');
+    }
     public userRepository: UserRepository; 
     static instance: UserController;
 

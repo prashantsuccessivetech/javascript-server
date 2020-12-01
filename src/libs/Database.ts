@@ -13,7 +13,7 @@ class database {
                     return;
                 }
                 seed();
-                resolve(null);
+                resolve(undefined);
             });
         });
     }
